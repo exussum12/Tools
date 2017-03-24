@@ -1,0 +1,4 @@
+#!/bin/bash
+search=$1
+
+wmctrl -l | grep -i "$search" | cut -f 1 -d ' ' | xargs -n 1 wmctrl -i -R
