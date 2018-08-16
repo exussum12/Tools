@@ -1,0 +1,4 @@
+#!/bin/bash
+(head -n1 $2;grep $1 $2) | column -t -s,
+
+# usage  cvsgrep (something) file.csv
