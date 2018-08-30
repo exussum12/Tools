@@ -1,9 +1,12 @@
 #!/bin/bash
+
+file=${@: -1}
+
 view="column -t -s,"
 if [[ -f /dev/stdout ]] ; then
     view=cat
 fi;
-(head -n1 $2;grep $1 $2) | $view
+    
+(head -n1 "$file";grep "$@") | $view
 
-
-# usage  cvsgrep (something) file.csv
+# usage  cvsgrep -args (something) file.csv
