@@ -2,11 +2,11 @@
 
 file=${@: -1}
 
-view="column -t -s,"
+view="column -tns,"
 if [[ -f /dev/stdout ]] ; then
     view=cat
 fi;
     
 (head -n1 "$file";grep "$@") | $view
 
-# usage  cvsgrep -args (something) file.csv
+# usage  cvsgrep -args (something) file.csv     Can also use | less -S for really wide csvs
